@@ -34,8 +34,11 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 body {
@@ -43,7 +46,6 @@ body {
     color: var(--text-main);
     line-height: 1.625;
     background-color: var(--bg-color);
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -721,23 +723,51 @@ footer {
     }
 
     .section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     .hero {
         text-align: center;
-        padding-top: 80px;
-        min-height: 80vh;
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 60px;
     }
 
     .hero-content {
         margin: 0 auto;
     }
 
+    .hero h1 {
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+
+    .hero p {
+        margin-bottom: 32px;
+    }
+
     .grid-2,
     .grid-3,
     .grid-4 {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Horizontal Course Card Fix */
+    .course-card-horizontal {
+        flex-direction: column !important;
+        min-height: auto !important;
+    }
+
+    .course-card-img {
+        flex: none !important;
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    /* Remove specific heights on mobile */
+    .card-img-wrapper {
+        height: 200px;
     }
 
     .whatsapp-float {
@@ -746,5 +776,62 @@ footer {
         width: 56px;
         height: 56px;
         font-size: 28px;
+    }
+
+    /* Utilities moved from inline */
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    /* Inner Page Hero Fix */
+    .inner-hero {
+        padding-top: clamp(100px, 12vw, 140px) !important;
+    }
+
+    .inner-hero .text-center {
+        margin-bottom: 40px !important;
+    }
+
+    /* Contact Page Mobile */
+    .contact-info-list {
+        gap: 24px;
+    }
+
+    .contact-info-item {
+        gap: 16px;
+    }
+
+    .contact-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    :root {
+        --container-pad: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .footer-grid {
+        gap: 32px;
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 24px;
     }
 }
