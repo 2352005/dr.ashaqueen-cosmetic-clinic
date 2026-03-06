@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
             const icon = mobileMenuBtn.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.replace('fa-bars', 'fa-times');
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
                 mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             });
         });
