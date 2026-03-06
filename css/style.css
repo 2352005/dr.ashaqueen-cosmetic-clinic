@@ -834,7 +834,6 @@ footer {
 
     /* Footer Mobile Alignment */
     footer {
-        text-align: center;
         padding: 60px 0 100px;
     }
 
@@ -843,29 +842,24 @@ footer {
         gap: 40px;
     }
 
-    .footer-links:first-child {
-        grid-column: span 1 !important;
-    }
-
     .footer-links p {
-        margin: 0 auto 24px !important;
+        margin-bottom: 24px !important;
     }
 
     .footer-links .social-links {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .footer-links ul li {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        text-align: center;
+        align-items: flex-start;
+        gap: 12px;
+        text-align: left;
     }
 
     .footer-links ul li i {
-        margin-right: 0;
-        font-size: 1.1rem;
+        margin-top: 5px;
+        font-size: 1rem;
     }
 }
 
