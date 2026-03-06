@@ -13,7 +13,7 @@
     /* Dynamic Spacing & Sizing */
     --container-max: 1280px;
     --container-pad: clamp(1rem, 5vw, 2rem);
-    --section-pad: clamp(4rem, 12vw, 8rem);
+    --section-pad: clamp(3rem, 10vw, 6rem);
 
     --radius-sm: 12px;
     --radius-md: 20px;
@@ -229,6 +229,12 @@ nav {
     max-width: 600px;
 }
 
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 /* Grid Layouts */
 .grid {
     display: grid;
@@ -236,15 +242,15 @@ nav {
 }
 
 .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-.grid-3 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 /* Cards & Modern Elements */
@@ -303,6 +309,87 @@ nav {
     width: fit-content;
 }
 
+/* New Component Classes */
+.doctor-img-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.doctor-img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.doctor-img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    background: var(--primary-light);
+    opacity: 0.1;
+    border-radius: var(--radius-lg);
+    z-index: 1;
+}
+
+.course-card-horizontal {
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-height: 280px;
+}
+
+.course-card-img {
+    flex: 1;
+    overflow: hidden;
+}
+
+.course-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-card-horizontal .card-body {
+    flex: 1.2;
+}
+
+.course-meta {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.course-meta .price {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.course-meta .duration {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.expertise-list {
+    margin-top: 40px;
+}
+
+.expertise-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.expertise-item i {
+    color: var(--primary-color);
+}
+
 /* WhatsApp Button */
 .whatsapp-float {
     position: fixed;
@@ -346,6 +433,39 @@ footer {
     color: var(--primary-light);
     margin-bottom: 24px;
     display: block;
+}
+
+/* Contact Page Styles */
+.contact-info-list {
+    gap: 32px;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--primary-color);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.contact-info-item h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.contact-info-item p {
+    color: var(--text-muted);
 }
 
 .footer-links h4 {
